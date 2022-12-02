@@ -7,6 +7,7 @@
         </div>
         <dev class="card-body">
             <form action="{{ url('insert-category') }}" method="POST">
+                @csrf
                 <div class="row">
                     <div class="col-md-6 md-3">
                         <label for="">Name</label>
@@ -31,10 +32,6 @@
                     <div class="col-md-12 md-3">
                         <label for="">Meta Keywords</label>
                         <textarea name="meta_keywords" rows="3" class="form-control"></textarea>
-                    </div>
-                    <div class="col-md-12 md-3">
-                        <label for="">Meta Description</label>
-                        <textarea name="meta_description" rows="3" class="form-control"></textarea>
                     </div>
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary">Submit</button>
