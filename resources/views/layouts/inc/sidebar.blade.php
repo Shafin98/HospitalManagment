@@ -24,12 +24,12 @@
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Add Fields</span>
+            <span class="nav-link-text ms-1">Add Field</span>
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link " href="{{ url('add-doctor') }}">
+          <a class="nav-link {{ Request::is('doctor') ? 'active':'' }} " href="{{ url('doctor') }}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
@@ -38,11 +38,11 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link " href="../pages/virtual-reality.html">
+          <a class="nav-link {{ Request::is('add-doctor') ? 'active':'' }} " href="{{ url('add-doctor') }}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-app text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Add Doctors</span>
+            <span class="nav-link-text ms-1">Add Doctor</span>
           </a>
         </li>
       </ul>

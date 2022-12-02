@@ -10,16 +10,18 @@
                 @csrf
                 @method('PUT')
                 <div class="row">
+
                     <div class="col-md-6 md-3">
-                        <label for="">Name</label>
-                        <input type="text" value="{{ $category->name }}" class="form-control" name="name">
+                        <label for="">Cordinator Name</label>
+                        <input type="text" value="{{ $category->meta_title }}" style="color:black;" class="form-control" name="name" placeholder="Write the name">
+                    </div>
+
+                    <div class="col-md-12 md-3">
+                        <label for="">Field Name</label>
+                        <input type="text" value="{{ $category->name }}" class="form-control" name="meta title">
                     </div>
                     <div class="col-md-12 md-3">
-                        <label for="">Meta Title</label>
-                        <input type="text" value="{{ $category->meta_title }}" class="form-control" name="meta title">
-                    </div>
-                    <div class="col-md-12 md-3">
-                        <label for="">Description</label>
+                        <label for="">Related Tests</label>
                         <textarea name="description" rows="3" class="form-control">{{ $category->description }}</textarea>
                     </div>
                     <div class="col-md-6 md-3">

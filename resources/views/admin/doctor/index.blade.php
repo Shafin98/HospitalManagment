@@ -10,18 +10,24 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>Field</th>
-                        <th>Cordinator</th>                        
-                        <th>Related Tests</th>
+                        <th>Doctor Name</th>
+                        <th>Specialist</th>
+                        <th>Time slot</th>
+                        <th>Room No.</th>
+                        <th>degree</th>
+                        <th>Institutions</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($category as $item)
+                    @foreach ($doctor as $item)
                         <tr>
                             <td>{{ $item->name }}</td>
-                            <td>{{ $item->meta_title }}</td>                                                      
-                            <td>{{ $item->description }}</td>
+                            <td>{{ $item->category->name }}</td>
+                            <td>The Doctor will be available at {{ $item->schedule }} for {{ $item->hour }} hour</td>
+                            <td>{{ $item->Room }}</td>
+                            <td>{{ $item->degree }}</td>
+                            <td>{{ $item->institution }}</td>
                             <td>
                                 <a href="{{ url('edit-prod/'.$item->id) }}" class="btn btn-primary">Edit</a>
                                 <a href="{{ url('delete-category/'.$item->id) }}" class="btn btn-danger">Delete</a>
