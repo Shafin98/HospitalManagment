@@ -28,10 +28,9 @@ class CategoryController extends Controller
         $category->status = $request->input('status') == TRUE ? '1':'0';
         $category->popular = $request->input('popular') == TRUE ? '1':'0';
         $category->meta_title = $request->input('meta_title');
-        $category->meta_keywords = $request->input('meta_keywords');
 
         $category->save();
-        return redirect('/dashboard')->with('status'. "Category Added Successfully");
+        return redirect('/dashboard')->with('status', "Category Added Successfully");
         
     }
     public function edit($id)
@@ -49,10 +48,9 @@ class CategoryController extends Controller
         $category->status = $request->input('status') == TRUE ? '1':'0';
         $category->popular = $request->input('popular') == TRUE ? '1':'0';
         $category->meta_title = $request->input('meta_title');
-        $category->meta_keywords = $request->input('meta_keywords');
 
         $category->update();
-        return redirect('/dashboard')->with('status'. "Category Updated Successfully");
+        return redirect('/dashboard')->with('status', "Category Updated Successfully");
     }
 
     public function drop($id)
@@ -60,6 +58,6 @@ class CategoryController extends Controller
         $category = Category::find($id);
 
         $category->delete();
-        return redirect('categories')->with('status'. "Category Deleted Successfully");
+        return redirect('categories')->with('status', "Category Deleted Successfully");
     }
 }

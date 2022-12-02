@@ -11,11 +11,17 @@
                 <div class="row">
                     <div class="col-md-6 md-3">
                         <label for="">Name</label>
-                        <input type="text" class="form-control" name="name">
+                        <input type="text" style="color:black;" class="form-control" name="name" placeholder="Write the name">
                     </div>
+
+                   <div class="col-md-12 md-3">
+                        <label for="">Field Name</label>
+                        <input type="text" class="form-control" name="meta title" placeholder="Write the name">
+                    </div>
+
                     <div class="col-md-12 md-3">
                         <label for="">Description</label>
-                        <textarea name="description" rows="3" class="form-control"></textarea>
+                        <textarea name="description" rows="3" style="color:black;" class="form-control" placeholder="Add discription"></textarea>
                     </div>
                     <div class="col-md-6 md-3">
                         <label for="">Status</label>
@@ -25,15 +31,9 @@
                         <label for="">Popular</label>
                         <input type="checkbox" name="popular">
                     </div>
-                    <div class="col-md-12 md-3">
-                        <label for="">Meta Title</label>
-                        <input type="text" class="form-control" name="meta title">
-                    </div>
-                    <div class="col-md-12 md-3">
-                        <label for="">Meta Keywords</label>
-                        <textarea name="meta_keywords" rows="3" class="form-control"></textarea>
-                    </div>
-                    <div class="col-md-12">
+
+
+                    <div class="col-md-12" style="padding-top: 20px;">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>

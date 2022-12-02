@@ -15,6 +15,10 @@
                         <input type="text" value="{{ $category->name }}" class="form-control" name="name">
                     </div>
                     <div class="col-md-12 md-3">
+                        <label for="">Meta Title</label>
+                        <input type="text" value="{{ $category->meta_title }}" class="form-control" name="meta title">
+                    </div>
+                    <div class="col-md-12 md-3">
                         <label for="">Description</label>
                         <textarea name="description" rows="3" class="form-control">{{ $category->description }}</textarea>
                     </div>
@@ -26,14 +30,7 @@
                         <label for="">Popular</label>
                         <input type="checkbox" {{ $category->popular == "1" ? 'checked':'' }} name="popular">
                     </div>
-                    <div class="col-md-12 md-3">
-                        <label for="">Meta Title</label>
-                        <input type="text" value="{{ $category->meta_title }}" class="form-control" name="meta title">
-                    </div>
-                    <div class="col-md-12 md-3">
-                        <label for="">Meta Keywords</label>
-                        <textarea name="meta_keywords" rows="3" class="form-control">{{ $category->meta_keywords }}</textarea>
-                    </div>
+
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
