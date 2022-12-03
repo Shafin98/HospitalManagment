@@ -3,7 +3,7 @@
 @section('content')
     <dev class="card">
         <div class="card-header">
-            <h4>Add Category</h4>
+            <h4>Add Fields</h4>
         </div>
         <dev class="card-body">
             <form action="{{ url('insert-category') }}" method="POST">

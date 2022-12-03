@@ -29,6 +29,9 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('categories', 'App\Http\Controllers\Admin\CategoryController@index');
     Route::get('add-category', 'App\Http\Controllers\Admin\CategoryController@add');
     Route::post('insert-category', 'App\Http\Controllers\Admin\CategoryController@insert');
+
+
+
     Route::get('edit-prod/{id}',[CategoryController::class ,'edit']);
     Route::put('update-category/{id}',[CategoryController::class ,'update']);
     Route::get('delete-category/{id}',[CategoryController::class ,'drop']);
@@ -36,5 +39,9 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('doctor', [DoctorController::class, 'index']);
     Route::get('add-doctor', [DoctorController::class, 'add']);
     Route::post('insert-doctor', [DoctorController::class, 'insert']);
+
+    Route::get('edit-doctor/{id}', [DoctorController::class, 'edit']);
+    Route::put('update-doctor/{id}', [DoctorController::class, 'update']);
+    Route::get('delete-doctor/{id}', [DoctorController::class, 'drop']);
 
 });

@@ -24,10 +24,11 @@ class CategoryController extends Controller
         $category = new Category();
 
         $category->name = $request->input('name');
+        $category->meta_title = $request->input('meta_title');
         $category->description = $request->input('description');
         $category->status = $request->input('status') == TRUE ? '1':'0';
         $category->popular = $request->input('popular') == TRUE ? '1':'0';
-        $category->meta_title = $request->input('meta_title');
+        
 
         $category->save();
         return redirect('/dashboard')->with('status', "Category Added Successfully");
@@ -44,10 +45,11 @@ class CategoryController extends Controller
         $category = Category::find($id);
         
         $category->name = $request->input('name');
+        $category->meta_title = $request->input('meta_title');
         $category->description = $request->input('description');
         $category->status = $request->input('status') == TRUE ? '1':'0';
         $category->popular = $request->input('popular') == TRUE ? '1':'0';
-        $category->meta_title = $request->input('meta_title');
+        
 
         $category->update();
         return redirect('/dashboard')->with('status', "Category Updated Successfully");

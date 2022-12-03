@@ -11,15 +11,16 @@
                 @method('PUT')
                 <div class="row">
 
-                    <div class="col-md-6 md-3">
+                    <div class="col-md-12 md-3">
                         <label for="">Cordinator Name</label>
-                        <input type="text" value="{{ $category->meta_title }}" style="color:black;" class="form-control" name="name" placeholder="Write the name">
+                        <input type="text" value="{{ $category->meta_title }}" class="form-control" name="meta title">
                     </div>
 
-                    <div class="col-md-12 md-3">
+                    <div class="col-md-6 md-3">
                         <label for="">Field Name</label>
-                        <input type="text" value="{{ $category->name }}" class="form-control" name="meta title">
+                        <input type="text" value="{{ $category->name }}" style="color:black;" class="form-control" name="name" placeholder="Write the name">
                     </div>
+                    
                     <div class="col-md-12 md-3">
                         <label for="">Related Tests</label>
                         <textarea name="description" rows="3" class="form-control">{{ $category->description }}</textarea>

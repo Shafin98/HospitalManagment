@@ -3,7 +3,7 @@
 @section('content')
     <dev class="card">
         <div class="card-header">
-            <h4>Category Page</h4>
+            <h4>Doctors List</h4>
             <hr>
         </div>
         <dev class="card-body">
@@ -29,8 +29,8 @@
                             <td>{{ $item->degree }}</td>
                             <td>{{ $item->institution }}</td>
                             <td>
-                                <a href="{{ url('edit-prod/'.$item->id) }}" class="btn btn-primary">Edit</a>
-                                <a href="{{ url('delete-category/'.$item->id) }}" class="btn btn-danger">Delete</a>
+                                <a href="{{ url('edit-doctor/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="{{ url('delete-doctor/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                     @endforeach

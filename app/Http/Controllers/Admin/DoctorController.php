@@ -37,6 +37,38 @@ class DoctorController extends Controller
         $doctor->trending = $request->input('trending') == TRUE ? '1':'0';
         $doctor->save();
 
-        return redirect('doctor')->with('status', "Doctor Added  Successfully");
+        return redirect('doctor')->with('status', "Doctor Added Successfully");
+    }
+
+    public function edit($id)
+    {
+        $doctor = Doctor::find($id);
+        return view('admin.doctor.edit', compact('doctor'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $doctor = Doctor::find($id);
+
+        $doctor->name = $request->input('name');
+        $doctor->speciality = $request->input('speciality');
+        $doctor->phone = $request->input('phone');
+        $doctor->schedule = $request->input('schedule');
+        $doctor->hour = $request->input('hour');
+        $doctor->Room = $request->input('Room');
+        $doctor->degree = $request->input('degree');
+        $doctor->institution = $request->input('institution');
+        $doctor->status = $request->input('status') == TRUE ? '1':'0';
+        $doctor->trending = $request->input('trending') == TRUE ? '1':'0';
+        $doctor->update();
+
+        return redirect('/dashboard')->with('status', "Doctor Updated Successfully");
+    }
+
+    public function drop($id)
+    {
+        $doctor = Doctor::find($id);
+        $doctor->delete();
+        return redirect('/dashboard')->with('status', "Doctor Deleted Successfully");
     }
 }
