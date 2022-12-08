@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DoctorController;
-
+use App\Http\Controllers\Frontend\FrontendController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,16 +15,17 @@ use App\Http\Controllers\Admin\DoctorController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [FrontendController::class, 'index']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/dashboard', 'App\Http\Controllers\Admin\FrontendController@index'); 
+    Route::get('/dashboard', 'App\Http\Controllers\Admin\FrontendController@index');
 
     Route::get('categories', 'App\Http\Controllers\Admin\CategoryController@index');
     Route::get('add-category', 'App\Http\Controllers\Admin\CategoryController@add');
