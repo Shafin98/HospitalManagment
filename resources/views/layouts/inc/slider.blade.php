@@ -9,10 +9,10 @@
       <img src="{{ asset('assets/img/slider_1.jpg') }}" class="d-block w-100" alt="..." width="400" height="700">
     </div>
     <div class="carousel-item">
-      <img src="{{ asset('assets/img/slider_1.jpg') }}" class="d-block w-100" alt="...">
+      <img src="{{ asset('assets/img/slider_2.jpg') }}" class="d-block w-100" alt="..." width="400" height="700">
     </div>
     <div class="carousel-item">
-      <img src="{{ asset('assets/img/slider_1.jpg') }}" class="d-block w-100" alt="...">
+      <img src="{{ asset('assets/img/slider_3.jpg') }}" class="d-block w-100" alt="..." width="400" height="700">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
