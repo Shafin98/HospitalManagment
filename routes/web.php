@@ -19,6 +19,10 @@ use App\Http\Controllers\Frontend\FrontendController;
 //     return view('welcome');
 // });
 Route::get('/', [FrontendController::class, 'index']);
+Route::get('category', [FrontendController::class, 'category']);
+Route::get('view-category/{name}', [FrontendController::class, 'viewcategory']);
+Route::get('category/{cate_name}/{doc_name}', [FrontendController::class, 'viewdoctor']);
+
 
 Auth::routes();
 

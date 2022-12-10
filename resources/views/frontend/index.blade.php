@@ -30,6 +30,32 @@
         </div>
     </div>
 
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <h2>Popular Fields</h2>
+                <div class="owl-carousel featured-carousel owl-theme">
+                    @foreach ($trending_field as $tcate)
+                        <div class="item">
+                            <a href="{{ asset('assets/img/category'.$tcate->image) }}">
+                                <div class="card">
+                                    <img src="{{ asset('assets/img/category/'.$tcate->image) }}" alt="Doctor image">
+                                    <div class="card-body">
+                                        <h5>{{ $tcate->name }}</h5>
+                                        <p>
+                                            {{ $tcate->description }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 
