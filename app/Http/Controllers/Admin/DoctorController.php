@@ -6,6 +6,7 @@ use App\Models\Doctor;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class DoctorController extends Controller
 {
@@ -19,10 +20,18 @@ class DoctorController extends Controller
         $category = Category::all();
         return view('admin.doctor.add', compact('category'));
     }
-    
+
     public function insert(Request $request)
     {
         $doctor = new Doctor();
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $file->move('assets/img/uploads/',$filename);
+            $doctor->image = $filename;
+        }
 
         $doctor->doc_id = $request->input('doc_id');
         $doctor->name = $request->input('name');
@@ -49,6 +58,19 @@ class DoctorController extends Controller
     public function update(Request $request, $id)
     {
         $doctor = Doctor::find($id);
+        if($request->hasFile('image'))
+        {
+            $path = 'assets/img/uploads/'.$doctor->image;
+            if(File::exists($path))
+            {
+                File::delete($path);
+            }
+            $file = $request->file('image');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $file->move('assets/img/uploads/',$filename);
+            $doctor->image = $filename;
+        }
 
         $doctor->name = $request->input('name');
         $doctor->speciality = $request->input('speciality');

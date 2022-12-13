@@ -3,7 +3,7 @@
 @section('content')
     <dev class="card">
         <div class="card-header">
-            <h4>Add Doctor</h4>
+            <h4>Edit/Update Doctor</h4>
         </div>
         <dev class="card-body">
             <form action="{{ url('update-doctor/'.$doctor->id) }}" method="POST" enctype="multipart/form-data">
@@ -13,7 +13,7 @@
                     <div class="col-md-12 mb-3">
                         <select class="form-select">
                             <option value="">{{ $doctor->category->name }}</option>
-                           
+
                         </select>
                     </div>
                     <div class="col-md-6 md-3">
@@ -61,7 +61,12 @@
                         <label for="">Trending</label>
                         <input type="checkbox" {{ $doctor->trending == '1' ? 'checked' : '' }} name="trending">
                     </div>
-
+                    @if ($doctor->image)
+                         <img src="{{ asset('assets/img/uploads/'.$doctor->image) }}" alt="Doctor image">
+                    @endif
+                    <div class="col-md-12">
+                        <input type="file" name="image" class="form-control">
+                    </div>
 
                     <div class="col-md-12" style="padding-top: 20px;">
                         <button type="submit" class="btn btn-primary">Update</button>

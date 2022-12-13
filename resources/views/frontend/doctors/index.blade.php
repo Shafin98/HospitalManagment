@@ -13,7 +13,7 @@
                         <div class="col-md-3 mb-3">
                             <div class="card">
                                 <a href="{{ url('category/'.$category->name.'/'.$doc->name) }}">
-                                    <img src="{{ asset('assets/img/'.$doc->image) }}" alt="Doctor image">
+                                    <img src="{{ asset('assets/img/uploads/'.$doc->image) }}" class="w-50" alt="">
                                     <div class="card-body">
                                         <h5>{{ $doc->name }}</h5>
                                         <span class="float-start">{{ $doc->category->name }},</span><br>

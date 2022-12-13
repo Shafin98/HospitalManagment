@@ -8,7 +8,7 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     * 
+     *
      *
      * @return void
      */
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->mediumText('institution');
             $table->tinyInteger('status');
             $table->tinyInteger('trending');
+            $table->string('image');
             $table->timestamps();
         });
     }

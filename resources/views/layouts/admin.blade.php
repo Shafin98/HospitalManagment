@@ -11,7 +11,9 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 
+    <link href="{{ asset('admin/css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/css/argon-dashboard.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div class="min-height-300 bg-primary position-absolute w-100">
@@ -24,20 +26,20 @@
             </div>
         </div>
     </div>
-     
-   
+
+
 
     <script src="{{ asset('admin/js/popper.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/bootstrap.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/perfect-scrollbar.min.js') }}" defer></script>
-    <script src="{{ asset('admin/js/smooth-scrollbar.min.js') }}" defer></script>    
+    <script src="{{ asset('admin/js/smooth-scrollbar.min.js') }}" defer></script>
     <script src="{{ asset('admin/js/chartjs.min.js') }}" defer></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @if(session('status'))
         <script>
             swal("{{ session('status') }}");
-        </script>  
+        </script>
     @endif
     @yield('scripts')
 

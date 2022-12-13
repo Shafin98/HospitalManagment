@@ -15,7 +15,7 @@
                     @foreach ($featured_doctor as $doc)
                         <div class="item">
                             <div class="card">
-                                <img src="{{ asset('assets/img/'.$doc->image) }}" alt="Doctor image">
+                                <img src="{{ asset('assets/img/uploads/'.$doc->image) }}" alt="Doctor image">
                                 <div class="card-body">
                                     <h5>{{ $doc->name }}</h5>
                                     <span class="float-start">{{ $doc->category->name }},</span><br>
@@ -39,7 +39,6 @@
                         <div class="item">
                             <a href="{{ asset('assets/img/category'.$tcate->image) }}">
                                 <div class="card">
-                                    <img src="{{ asset('assets/img/category/'.$tcate->image) }}" alt="Doctor image">
                                     <div class="card-body">
                                         <h5>{{ $tcate->name }}</h5>
                                         <p>

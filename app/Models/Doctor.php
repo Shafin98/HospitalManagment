@@ -21,6 +21,7 @@ class Doctor extends Model
         'institution',
         'status',
         'trending',
+        'image',
     ];
 
     public function category()

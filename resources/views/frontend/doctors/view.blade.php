@@ -16,7 +16,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4 border-right">
-                    <img src="{{ asset('assets/img/'.$doctor->image) }}" class="w-100" alt="">
+                    <img src="{{ asset('assets/img/uploads/'.$doctor->image) }}" class="w-50" alt="">
                 </div>
                 <div class="col-md-8">
                     <h2 class="mb-0">
@@ -37,9 +37,9 @@
                         <label for="badge bg-danger">Not Available</label>
                     @endif
                     <div class="row mt-2">
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                             <br/>
-                            <button type="button" class="btn btn-success me-3 float-start">View schedule</button>
+                            <button type="button" class="btn btn-success me-3 float-start">View schedule <i class="fa fa-heart"></i></button>
                         </div>
                     </div>
                 </div>
