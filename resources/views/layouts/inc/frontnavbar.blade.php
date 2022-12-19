@@ -7,11 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('category') }}">Category</a>
+          <a class="nav-link" href="{{ url('labs') }}">Lab List</a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('category') }}">Field List</a>
+        </li>
+
+
 
 
         @guest
@@ -38,12 +45,6 @@
                         </a>
                         <a class="dropdown-item" href="{{ url('my-orders') }}">
                             My Orders
-                        </a>
-                        <a class="dropdown-item" href="{{ url('cart') }}">
-                            My Cart
-                        </a>
-                        <a class="dropdown-item" href="{{ url('wishlist') }}">
-                            My Wishlist
                         </a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

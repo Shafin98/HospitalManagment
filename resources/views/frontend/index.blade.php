@@ -37,7 +37,7 @@
                 <div class="owl-carousel featured-carousel owl-theme">
                     @foreach ($trending_field as $tcate)
                         <div class="item">
-                            <a href="{{ asset('assets/img/category'.$tcate->image) }}">
+
                                 <div class="card">
                                     <div class="card-body">
                                         <h5>{{ $tcate->name }}</h5>
@@ -46,7 +46,29 @@
                                         </p>
                                     </div>
                                 </div>
-                            </a>
+
+                        </div>
+                    @endforeach
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="py-5">
+        <div class="container">
+            <div class="row">
+                <h2>Featured Labs</h2>
+                <div class="owl-carousel featured-carousel owl-theme">
+                    @foreach ($featured_lab as $lab)
+                        <div class="item">
+
+                                <div class="card-body">
+                                    <img src="{{ asset('assets/img/uploads/'.$lab->image) }}" alt="Lab image">
+                                    <h5>{{ $lab->lab_name }}</h5>
+                                    <span class="float-end">{{ $lab->lab_schedule }}</span>
+                                </div>
+
                         </div>
                     @endforeach
                 </div>

@@ -28,11 +28,11 @@ class CategoryController extends Controller
         $category->description = $request->input('description');
         $category->status = $request->input('status') == TRUE ? '1':'0';
         $category->popular = $request->input('popular') == TRUE ? '1':'0';
-        
+
 
         $category->save();
         return redirect('/dashboard')->with('status', "Category Added Successfully");
-        
+
     }
     public function edit($id)
     {
@@ -43,13 +43,13 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $category = Category::find($id);
-        
+
         $category->name = $request->input('name');
         $category->meta_title = $request->input('meta_title');
         $category->description = $request->input('description');
         $category->status = $request->input('status') == TRUE ? '1':'0';
         $category->popular = $request->input('popular') == TRUE ? '1':'0';
-        
+
 
         $category->update();
         return redirect('/dashboard')->with('status', "Category Updated Successfully");
@@ -63,3 +63,4 @@ class CategoryController extends Controller
         return redirect('categories')->with('status', "Category Deleted Successfully");
     }
 }
+

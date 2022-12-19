@@ -45,6 +45,34 @@
             <span class="nav-link-text ms-1">Add Doctor</span>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('lab') ? 'active':'' }} " href="{{ url('lab') }}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Labs</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('add-lab') ? 'active':'' }} " href="{{ url('add-lab') }}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-app text-info text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Add Lab</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('users') ? 'active':'' }} " href="{{ url('users') }}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Users</span>
+          </a>
+        </li>
+
       </ul>
     </div>
   </aside>

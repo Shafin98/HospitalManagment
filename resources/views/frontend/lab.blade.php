@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('title')
-    Doctor Fields
+    Lab List
 @endsection
 
 @section('content')
@@ -9,17 +9,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>All Field</h2>
+                    <h2>All Labs</h2>
                     <div class="row">
-                        @foreach ($category as $cate)
+                        @foreach ($lab as $item)
                             <div class="col-md-3 mb-3">
-                                <a href="{{ url('view-category/'.$cate->name) }}">
+                                <a href="{{ url('view-lab/'.$item->id) }}">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5>{{ $cate->name }}</h5>
-                                            <p>
-                                                {{ $cate->description }}
-                                            </p>
+                                            <span class="float-start">{{ $item->lab_name }}</span><br>
+                                            <span class="float-end">Room No: {{ $item->lab_Room }}</span>
                                         </div>
                                     </div>
                                 </a>
